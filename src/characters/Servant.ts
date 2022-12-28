@@ -5,15 +5,18 @@ import Character from './Character';
 class Servant extends Character{
     private rankQuest?: number;
     private interludeQuest?: number;
+    private hogu?: Card;
 
     constructor(_id:number, _name: string, _servantClass: string, _hp: number, _atk: number){
         super(_id, _name, _servantClass, _hp, _atk);
     }
 
-    cardDeck(cards: Card[]){
+    public cardDeck(cards: Card[]): Card[]{
+        console.log(cards);
         return cards;
     }
-    servantAbilities(abilities: Ability[]){
+    public servantAbilities(abilities: Ability[]): Ability[]{
+        console.log(abilities);
         return abilities;
     }
     //getters and setters
