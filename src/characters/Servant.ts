@@ -7,14 +7,10 @@ class Servant extends Character{
     private interludeQuest?: number;
     private hogu?: Card;
 
-    constructor(_id:number, _name: string, _servantClass: string, _hp: number, _atk: number){
-        super(_id, _name, _servantClass, _hp, _atk);
+    constructor(_id:number, _name: string, _servantClass: string, _hp: number, _atk: number, _card_deck: Card[]){
+        super(_id, _name, _servantClass, _hp, _atk, _card_deck);
     }
 
-    public cardDeck(cards: Card[]): Card[]{
-        console.log(cards);
-        return cards;
-    }
     public servantAbilities(abilities: Ability[]): Ability[]{
         console.log(abilities);
         return abilities;

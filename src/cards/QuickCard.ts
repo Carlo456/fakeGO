@@ -1,6 +1,5 @@
 import Card from './Card';
 class QuickCard extends Card {
-  private _modifier: number;
   private _crit_rate: number;
   private _crit_dmg: number;
   constructor(
@@ -10,18 +9,18 @@ class QuickCard extends Card {
     crit_rate: number,
     crit_dmg: number
   ) {
-    super(type, num_hits);
+    super(type, num_hits, modifier);
     this._modifier = modifier;
     this._crit_rate = crit_rate;
     this._crit_dmg = crit_dmg;
   }
   //normal quick attack
-  public quick_attack(num_hits: number, modifier: number){
-    let total_dmg = num_hits * modifier;
+  public attack(num_hits: number, modifier: number){
+    let total_dmg = num_hits * modifier + 200;
     return total_dmg;
   }
   //critical hit function
-  critical_hit(num_hits: number, modifier: number, crit_dmg: number | null): number{
+  public critical_hit(num_hits: number, modifier: number, crit_dmg: number | null): number{
     if(crit_dmg === null){
         crit_dmg = 1;
     }

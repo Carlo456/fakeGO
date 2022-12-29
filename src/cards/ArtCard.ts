@@ -1,6 +1,5 @@
 import Card from "./Card";
 class ArtCard extends Card {
-  private _modifier: number;
   private _hogu_charge: number = 0;
   constructor(
     type: string,
@@ -8,13 +7,12 @@ class ArtCard extends Card {
     modifier: number,
     hogu_charge: number
   ) {
-    super(type, num_hits);
-    this._modifier = modifier;
+    super(type, num_hits, modifier);
     this._hogu_charge = hogu_charge;
   }
   //normal art card attack
-  public art_attack(num_hits: number, modifier: number){
-    let total_dmg = num_hits * modifier;
+  public attack(num_hits: number, modifier: number){
+    let total_dmg = num_hits * modifier + 100;
     return total_dmg;
   }  
   //charge attack TODO: make buffs disponibles

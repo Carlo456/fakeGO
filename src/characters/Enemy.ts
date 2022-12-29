@@ -4,8 +4,8 @@ import Character from './Character';
 
 class Enemy extends Character{
     private _extraAttack?: string
-    constructor(_id: number, _name:string, _servantClass:string, _hp: number, _atk: number,){
-        super(_id, _name, _servantClass, _hp, _atk)
+    constructor(_id: number, _name:string, _servantClass:string, _hp: number, _atk: number, _card_deck: Card[]){
+        super(_id, _name, _servantClass, _hp, _atk, _card_deck)
     }
 
     cardDeck(cards: Card[]){
